@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Payments</title>
+</head>
+<body>
+    <h2>Payments</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Date</th>
+                <th>Amount</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="payment : ${payments}">
+                <td th:text="${payment.id}"></td>
+                <td th:text="${payment.date}"></td>
+                <td th:text="${payment.amount}"></td>
+                <td>
+                    <a th:href="@{/payments/{id}(id=${payment.id})}">Details</a>
+                    <a th:href="@{/payments/edit/{id}(id=${payment.id})}">Edit</a>
+                    <a th:href="@{/payments/delete/{id}(id=${payment.id})}">Delete</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <a th:href="@{/payments/new}">Add New Payment</a>
+</body>
+</html>

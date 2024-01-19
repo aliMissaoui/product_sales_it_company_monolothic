@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Invoice Details</title>
+</head>
+<body>
+    <h2>Invoice Details</h2>
+    <p>ID: <span th:text="${invoice.id}"></span></p>
+    <p>Date: <span th:text="${invoice.date}"></span></p>
+    <p>Total Amount: <span th:text="${invoice.totalAmount}"></span></p>
+    <a th:href="@{/invoices}">Back to Invoices</a>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>New Payment</title>
+</head>
+<body>
+    <h2>New Payment</h2>
+    <form action="@{/payments/new}" method="post" th:object="${payment}">
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" th:field="*{date}" required>
+        <br>
+        <label for="amount">Amount:</label>
+        <input type="number" id="amount" name="amount" th:field="*{amount}" required>
+        <br>
+        <button type="submit">Create Payment</button>
+    </form>
+    <a th:href="@{/payments}">Back to Payments</a>
+</body>
+</html>
